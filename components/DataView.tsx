@@ -1,5 +1,4 @@
 import { weatherData } from "../lib/requestData";
-import { title } from "process";
 
 
 type DataViewProps= {
