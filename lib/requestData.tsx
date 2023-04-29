@@ -13,7 +13,7 @@ const toCompass = (value :number):string =>{
     return arr[(index % 16)];
 }
 
-export async function getWeather() {
+export async function getWeatherData() {
     const req = await fetch("https://api.open-meteo.com/v1/forecast?latitude=55.75&longitude=37.62&hourly=temperature_2m&current_weather=true&forecast_days=1");
     const data = await req.json();
     const result : weatherData = {
