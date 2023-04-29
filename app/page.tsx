@@ -10,7 +10,6 @@ async function getWeather() {
 
 export default async function Home() {
   return (
-    <main>
       <div className="font-mono flex sm:justify-center space-x-3 mt-6 p-6" >
           <div className='mx-sm'>
             <h1 className='font-bold'>root app page</h1>
@@ -33,7 +32,6 @@ export default async function Home() {
                 deserunt mollit anim id est laborum.
           </div>
       </div>
-    </main>
 
   )
 }
