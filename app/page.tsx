@@ -1,7 +1,5 @@
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import Link from 'next/link';
 
 async function getWeather() {
   const req = await fetch("https://api.open-meteo.com/v1/forecast?latitude=55.75&longitude=37.62&hourly=temperature_2m&current_weather=true&forecast_days=1");
@@ -11,25 +9,33 @@ async function getWeather() {
 
 
 export default async function Home() {
-  const data = await getWeather();
-  const toCompass = (value :number) =>{
-    const index =Math.floor((value / 22.5) + 0.5);
-    const arr=["N","NNE","NE","ENE","E","ESE", "SE", "SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"];
-    return arr[(index % 16)];
-  }
   return (
     <main>
-      <div className = "font-mono flex sm:justify-center space-x-3 mt-6" >
-        <h1 className = "font-bold">msc weather data</h1>
-        <div className = "flex flex-col justify-around bg-slate-50">
-          <p>temp : {data.current_weather.temperature}°C</p>
-          <p>windspeed : {data.current_weather.windspeed}km/h</p>
-          <p>winddir : {toCompass(data.current_weather.winddirection)}</p>
-          <p>weathercode : {data.current_weather.weathercode}</p>
-        </div>
-        
+      <div className="font-mono flex sm:justify-center space-x-3 mt-6 p-6" >
+          <div className='mx-sm'>
+            <h1 className='font-bold'>root app page</h1>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+              ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+               voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+               Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.
+          </div>
+          <div>
+            <h1 className='font-bold'>or whatever</h1>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+              ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+               voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+               Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.
+          </div>
       </div>
     </main>
-    
+
   )
 }
+
+
